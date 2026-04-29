@@ -56,7 +56,7 @@ const Navbar = () => {
         <>
             {isOpen && (
                 <div
-                    className="fixed inset-0 h-screen w-screen bg-accent/5 backdrop-blur-sm z-40"
+                    className="fixed inset-0 h-screen w-screen bg-accent/5 backdrop-blur-[1px] z-40"
                     onClick={() => setOpen(false)}
                     onTouchStart={() => setOpen(false)}
                 ></div>
@@ -88,7 +88,7 @@ const Navbar = () => {
                     </div>
 
                     {isOpen ? (
-                        <div className="block md:hidden absolute top-15 -left-4 w-[200px] bg-white/90 dark:bg-zinc-900/90 backdrop-blur-xl border border-white/20 dark:border-zinc-800/50 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] rounded-lg p-4 py-8 transition-all durtion-500 zoom-in-50">
+                        <div className="block md:hidden absolute top-15 -left-4 w-[200px] bg-white dark:bg-zinc-900  border border-white/30 dark:border-zinc-800/40 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] rounded-lg p-4 py-8 transition-all durtion-500 zoom-in-50">
                             <Link
                                 href="/"
                                 className="text-2xl text-center font-black tracking-tighter"
