@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 const Navbar = () => {
     const [isOpen, setOpen] = useState(false);
     const pathName = usePathname();
-    console.log(pathName);
 
     const getActiveLink = (path) => {
         return path === pathName
@@ -114,7 +113,7 @@ const Navbar = () => {
                             <ThemeToggle />
                         </div>
 
-                        <div className="flex items-center transform hover:scale-105 transition-transform">
+                        <div>
                             <NavLogin />
                         </div>
                     </div>

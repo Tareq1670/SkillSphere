@@ -84,7 +84,7 @@ const Footer = () => {
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-500 dark:text-zinc-400">
                         <p>
                             © {new Date().getFullYear()} SkillSphere. All rights
-                            reserved.
+                            reserved  by Tariqul Islam Tareq.
                         </p>
 
                         <div className="flex items-center gap-6">
