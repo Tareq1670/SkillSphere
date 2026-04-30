@@ -35,6 +35,7 @@ const LoginPage = () => {
             callbackURL: redirectTo,
         });
 
+        
         if (error) {
             toast.error(error.message || "Something went wrong!", {
                 icon: () => "🚫",
