@@ -23,29 +23,40 @@ const HowToLearn = () => {
                     </div>
                     <div className="space-y-1 border-b border-b-zinc-800/20 dark:border-b-zinc-500 pb-2 transition-all duration-500">
                         <h2 className="text-xl dark:text-zinc-200 text-zinc-700 font-semibold transition-all duration-300">
-                            Hands-on Projects
+                            Interactive Practical Projects
                         </h2>
                         <p className="text-[14px] md:text-[16px] text-zinc-500 transition-all duration-500  leading-5">
-                            Shudhu totthiyo gyan noy, bastov-mukhi project-er
-                            madhyome apnar shekha skill-gulo proyog korun ebong
-                            nijer portfolio gore tulun.
+                            Master skills by building real-world applications.
+                            Solve industry challenges to create a powerful,
+                            standout portfolio.
                         </p>
                     </div>
                     <div className="space-y-1 border-b border-b-zinc-800/20 dark:border-b-zinc-500 pb-2 transition-all duration-500">
                         <h2 className="text-xl dark:text-zinc-200 text-zinc-700 font-semibold transition-all duration-300">
-                            Expert Mentorship
+                            Expert Mentorship & Support
                         </h2>
                         <p className="text-[14px] md:text-[16px] text-zinc-500 transition-all duration-500  leading-5">
-                            Shilpo-prothisthito expert-der kach theke paben
-                            sothik nirdeshona ebong protiniyot feedback, ja
-                            apnake pro-level developer hote shahajyo korbe.
+                            Stay on track with expert guidance and community
+                            support, ensuring a smooth, efficient, and
+                            constantly evolving learning experience.
                         </p>
                     </div>
                 </div>
                 <div className="col-span-2 md:border-l border-l-zinc-800 dark:border-l-zinc-500 md:pl-4 space-y-2">
-                    <h2 className="text-2xl dark:text-zinc-200 text-zinc-700 font-semibold transition-all duration-300 lg:mb-4">Empower Your Growth</h2>
-                    <p  className="text-[14px] md:text-[16px] text-zinc-500 transition-all duration-500 leading-5 lg:leading-7">
-                        At SkillSphere, we bridge the gap between theory and practice. Our platform offers a flexible, self-paced environment designed for mastering in-demand technologies through an ecosystem built for growth. Beyond tutorials, we integrate hands-on labs and real-world case studies into every course, ensuring you solve actual problems rather than just memorizing syntax. Whether switching careers or leveling up, SkillSphere provides the tools and expert insights to help you reach your goals with confidence.
+                    <h2 className="text-2xl dark:text-zinc-200 text-zinc-700 font-semibold transition-all duration-300 lg:mb-4">
+                        Empower Your Growth
+                    </h2>
+                    <p className="text-[14px] md:text-[16px] text-zinc-500 transition-all duration-500 leading-5 lg:leading-7">
+                        At SkillSphere, we bridge the gap between theory and
+                        practice. Our platform offers a flexible, self-paced
+                        environment designed for mastering in-demand
+                        technologies through an ecosystem built for growth.
+                        Beyond tutorials, we integrate hands-on labs and
+                        real-world case studies into every course, ensuring you
+                        solve actual problems rather than just memorizing
+                        syntax. Whether switching careers or leveling up,
+                        SkillSphere provides the tools and expert insights to
+                        help you reach your goals with confidence.
                     </p>
                 </div>
             </div>
