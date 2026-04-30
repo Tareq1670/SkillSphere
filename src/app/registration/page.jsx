@@ -37,14 +37,14 @@ const Registration = () => {
         if (error) {
             toast.error(error.message || "Something went wrong!", {
                 icon: () => "🚫",
-                hideProgressBar : true,
+                hideProgressBar: true,
                 className:
-                    "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 border-b-2 border-b-red-500",
+                    "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 border-b-2 border-b-red-500 dark:border-b-red-500",
             });
         } else {
             toast.success("Registration successful!", {
                 icon: () => "✅",
-                hideProgressBar : true,
+                hideProgressBar: true,
                 className:
                     "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 border-b-2 border-b-green-500",
             });
@@ -100,32 +100,6 @@ const Registration = () => {
 
                         <div className="group">
                             <label className="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2 ml-1">
-                                Profile Picture URL
-                            </label>
-                            <div className="relative">
-                                <HiOutlinePhotograph
-                                    className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-blue-500 transition-colors z-10"
-                                    size={20}
-                                />
-                                <input
-                                    type="text"
-                                    className={`w-full pl-12 pr-4 py-4 bg-zinc-200 dark:bg-zinc-800/50 rounded-2xl border-2 transition-all outline-none ${errors.photoURL ? "border-red-500" : "border-transparent focus:border-blue-500 dark:focus:border-blue-500/50 focus:bg-white dark:focus:bg-zinc-800"} text-zinc-900 dark:text-white`}
-                                    placeholder="https://your-photo-link.com"
-                                    {...register("photoURL", {
-                                        required:
-                                            "Image is required for your profile",
-                                    })}
-                                />
-                            </div>
-                            {errors.photoURL && (
-                                <p className="text-xs text-red-500 mt-1 ml-1">
-                                    {errors.photoURL.message}
-                                </p>
-                            )}
-                        </div>
-
-                        <div className="group">
-                            <label className="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2 ml-1">
                                 Email Address
                             </label>
                             <div className="relative">
@@ -145,6 +119,33 @@ const Registration = () => {
                             {errors.email && (
                                 <p className="text-xs text-red-500 mt-1 ml-1">
                                     {errors.email.message}
+                                </p>
+                            )}
+                        </div>
+
+                        <div className="group">
+                            <label className="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2 ml-1">
+                                Profile Picture URL
+                            </label>
+
+                            <div className="relative">
+                                <HiOutlinePhotograph
+                                    className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-blue-500 transition-colors z-10"
+                                    size={20}
+                                />
+                                <input
+                                    type="text"
+                                    className={`w-full pl-12 pr-4 py-4 bg-zinc-200 dark:bg-zinc-800/50 rounded-2xl border-2 transition-all outline-none ${errors.photoURL ? "border-red-500" : "border-transparent focus:border-blue-500 dark:focus:border-blue-500/50 focus:bg-white dark:focus:bg-zinc-800"} text-zinc-900 dark:text-white`}
+                                    placeholder="https://your-photo-link.com"
+                                    {...register("photoURL", {
+                                        required:
+                                            "Image is required for your profile",
+                                    })}
+                                />
+                            </div>
+                            {errors.photoURL && (
+                                <p className="text-xs text-red-500 mt-1 ml-1">
+                                    {errors.photoURL.message}
                                 </p>
                             )}
                         </div>

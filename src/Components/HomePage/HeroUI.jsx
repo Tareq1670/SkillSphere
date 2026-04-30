@@ -10,12 +10,12 @@ import "swiper/css/effect-fade";
 
 const HeroUI = ({ banner }) => {
     return (
-        <div className="my-5 rounded-2xl overflow-hidden shadow-2xl mx-1 md:mx-2">
+        <div className="my-2 md:my-5 rounded-2xl overflow-hidden shadow-2xl mx-1 md:mx-2">
             <Swiper
                 modules={[Autoplay, Pagination, EffectFade]}
                 spaceBetween={0}
                 slidesPerView={1}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                autoplay={{ delay: 4000, disableOnInteraction: false }}
                 pagination={{
                     clickable: true,
                     dynamicBullets: true,

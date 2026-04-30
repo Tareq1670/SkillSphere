@@ -3,3 +3,9 @@ export const getBanner = async () => {
     const data = res.json();
     return data;
 }
+
+export const getCourses = async () => {
+    const res = await fetch("https://skillsphere-api-htpu.onrender.com/courses");
+    const data = res.json();
+    return data
+}
