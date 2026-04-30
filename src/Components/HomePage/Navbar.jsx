@@ -110,6 +110,7 @@ const Navbar = () => {
 
                     <div className="flex items-center gap-2 md:gap-4">
                         <div className="p-1 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
+                            
                             <ThemeToggle />
                         </div>
 
