@@ -9,13 +9,13 @@ const Learning = () => {
         <div className="px-1 md:px-0 max-w-6xl mx-auto mt-5 md:mt-8 lg:mt-10">
             <div className="mb-8 space-y-2 flex items-center justify-center flex-col text-center max-w-2xl mx-auto">
                 <h2 className="text-3xl font-bold tracking-tight light:text-white dark:text-white">
-                    Why Learners Choose{" "}
+                    Master Your Schedule with{" "}
                     <span className="text-[#c421ff]">SkillSphere</span>
                 </h2>
                 <p className="text-zinc-400 dark:text-zinc-300 text-[14px] md:text-[16px]">
-                    SkillSphere makes learning professional skills simple and
-                    practical. Each course builds real-world expertise and
-                    confidence through hands-on, industry-focused lessons.
+                    Efficiency is the bridge between goals and accomplishment.
+                    Use these proven strategies to optimize your learning
+                    journey.
                 </p>
             </div>
 
@@ -25,13 +25,12 @@ const Learning = () => {
                         <FileSpreadsheet className="text-cyan-400" />
                     </div>
                     <h2 className="text-2xl font-semibold">
-                        Structured Learning Paths
+                        The Eisenhower Matrix
                     </h2>
                     <p className="text-[14px] md:text-[16px] text-zinc-600 dark:text-zinc-300">
-                        Lessons are organized into clear, step-by-step modules
-                        that guide learners through every level of difficulty.
-                        We make complex technical concepts easier to master and
-                        apply.
+                        Categorize tasks into "Urgent" and "Important" to focus
+                        your energy where it matters most and eliminate
+                        time-wasters.
                     </p>
                 </div>
                 <div className="relative aspect-square w-full overflow-hidden dark:border-zinc-700 light:border-zinc-800 border rounded-lg">
@@ -49,13 +48,12 @@ const Learning = () => {
                         <BookCheck className="text-cyan-400" />
                     </div>
                     <h2 className="text-2xl font-semibold">
-                        Practical & Industry-Relevant Content
+                        Pomodoro Technique
                     </h2>
                     <p className="text-[14px] md:text-[16px] text-zinc-600 dark:text-zinc-300">
-                        The curriculum focuses on real-world scenarios and
-                        current market trends. This helps learners apply their
-                        new skills directly to professional projects and career
-                        growth.
+                        Boost productivity by working in 25-minute sprints
+                        followed by a 5-minute break. This keeps your brain
+                        sharp and prevents burnout.
                     </p>
                 </div>
                 <div className="relative aspect-square w-full overflow-hidden dark:border-zinc-700 light:border-zinc-800 border rounded-lg">
@@ -73,10 +71,12 @@ const Learning = () => {
                         <LaptopMinimalCheck className="text-cyan-400" />
                     </div>
                     <h2 className="text-2xl font-semibold">
-                        Beginner-to-Expert Approach
+                        Digital Time Blocking
                     </h2>
                     <p className="text-[14px] md:text-[16px] text-zinc-600 dark:text-zinc-300">
-                        No prior experience is required. We provide clear explanations and practical examples without complex jargon.
+                        Treat your learning hours like a non-negotiable
+                        appointment. Schedule specific blocks in your digital
+                        calendar for deep study.
                     </p>
                 </div>
                 <div className="relative aspect-square w-full overflow-hidden dark:border-zinc-700 light:border-zinc-800 border rounded-lg">

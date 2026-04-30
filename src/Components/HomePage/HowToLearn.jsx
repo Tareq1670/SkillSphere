@@ -2,7 +2,7 @@ import React from "react";
 
 const HowToLearn = () => {
     return (
-        <div className="my-8 md:my-12 lg:my-15 px-1 md:px-0">
+        <div className="my-8 md:my-12 lg:my-15 px-1 md:px-0 mt-8 md:mt-12">
             <div className="mb-4">
                 <h2 className="text-3xl font-bold tracking-tight light:text-white dark:text-white text-center under">
                     How to <span className="text-[#c421ff]">Learn</span>
@@ -42,7 +42,7 @@ const HowToLearn = () => {
                         </p>
                     </div>
                 </div>
-                <div className="col-span-2 md:border-l border-l-zinc-800 dark:border-l-zinc-500 md:pl-4 space-y-2">
+                <div className="col-span-2 md:border-l border-l-zinc-800/20 dark:border-l-zinc-500 md:pl-4 space-y-2">
                     <h2 className="text-2xl dark:text-zinc-200 text-zinc-700 font-semibold transition-all duration-300 lg:mb-4">
                         Empower Your Growth
                     </h2>

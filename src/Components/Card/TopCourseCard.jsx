@@ -40,7 +40,7 @@ const TopCourseCard = ({ course }) => {
                 </h3>
 
                 <Button className=" mt-3 w-full h-11 rounded-lg font-semibold bg-zinc-900 text-white dark:bg-white dark:text-black hover:bg-[#b63de3] dark:hover:bg-[#b63de3] hover:text-white dark:hover:text-white transition-all duration-300 shadow-lg shadow-transparent hover:shadow-[#b73de314]">
-                    <Link href={"/courses"} className="flex items-center justify-center gap-2 h-full w-full">View Details <ArrowUpRight/></Link>
+                    <Link href={"/courses"} className="flex items-center justify-center gap-2 h-full w-full">View Details</Link>
                 </Button>
             </div>
         </div>
