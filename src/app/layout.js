@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/Components/HomePage/Navbar";
 import ThemeProviders from "@/Providers/ThemeProviders";
 import Footer from "@/Components/HomePage/Footer";
+import { Slide, ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -32,10 +33,22 @@ export default function RootLayout({ children }) {
                 <ThemeProviders>
                     <Navbar />
                     <main className="pt-24 md:pt-20 container mx-auto">
-                      {children}
+                        {children}
                     </main>
-                    <Footer/>
+                    <Footer />
                 </ThemeProviders>
+            <ToastContainer
+                position="top-center"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                transition={Slide}
+            />
             </body>
         </html>
     );

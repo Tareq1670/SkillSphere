@@ -2,10 +2,17 @@ import { authClient, useSession } from "@/lib/auth-client";
 import { ArrowLeftToLine, ArrowRightToSquare } from "@gravity-ui/icons";
 import { Button } from "@heroui/react";
 import Image from "next/image";
-import { redirect } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const NavLogin = () => {
     const session = authClient.useSession();
+    const router = useRouter()
+    const pathName = usePathname()
+
+    const handleLogin = () => {
+        router.push(`/login?callbackUrl=${pathName}`)
+    }
+
     return (
         <div>
             {session.isPending ? (
@@ -33,7 +40,7 @@ const NavLogin = () => {
                 </div>
             ) : (
                 <Button
-                    onClick={() => redirect("/login")}
+                    onClick={handleLogin}
                     className={"bg-gradient-to-r from-[#c240e2] to-[#7514ea]"}
                 >
                     <ArrowRightToSquare /> Login

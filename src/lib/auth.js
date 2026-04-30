@@ -7,7 +7,8 @@ const db = client.db("SkillSphere");
 
 export const auth = betterAuth({
     emailAndPassword:{
-        enabled : true
+        enabled : true,
+        autoSignIn : false
     },
   database: mongodbAdapter(db, {
     client

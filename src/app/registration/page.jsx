@@ -5,15 +5,16 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { 
-    HiOutlineMail, 
-    HiOutlineUser, 
-    HiOutlinePhotograph, 
-    HiOutlineLockClosed, 
-    HiEye, 
+import {
+    HiOutlineMail,
+    HiOutlineUser,
+    HiOutlinePhotograph,
+    HiOutlineLockClosed,
+    HiEye,
     HiEyeOff,
-    HiArrowRight
+    HiArrowRight,
 } from "react-icons/hi";
+import { toast } from "react-toastify";
 
 const Registration = () => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -25,21 +26,32 @@ const Registration = () => {
     } = useForm();
 
     const handleRegistration = async (data) => {
-        const { data:res, error } = await authClient.signUp.email({
+        await authClient.signOut();
+        const { data: res, error } = await authClient.signUp.email({
             name: data.name,
             email: data.email,
             password: data.password,
             image: data.photoURL,
-            callbackURL: window.location.origin,
-            autoSignIn : false
         });
-        console.log({res, error});
 
         if (error) {
-            alert(error.message);
+            toast.error(error.message || "Something went wrong!", {
+                icon: () => "🚫",
+                hideProgressBar : true,
+                className:
+                    "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 border-b-2 border-b-red-500",
+            });
         } else {
-            alert("Registration successful!");
-            router.push("/");
+            toast.success("Registration successful!", {
+                icon: () => "✅",
+                hideProgressBar : true,
+                className:
+                    "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 border-b-2 border-b-green-500",
+            });
+
+            setTimeout(() => {
+                router.push("/login");
+            }, 2000);
         }
     };
 
@@ -49,26 +61,41 @@ const Registration = () => {
                 <div className="p-8 sm:p-12">
                     <div className="mb-10">
                         <h2 className=" text-3xl md:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white mb-2 text-center">
-                            Registration your <span className="text-blue-600 dark:text-blue-500">Account</span>
+                            Registration your{" "}
+                            <span className="text-blue-600 dark:text-blue-500">
+                                Account
+                            </span>
                         </h2>
-                        
                     </div>
 
-                    <form onSubmit={handleSubmit(handleRegistration)} className="space-y-6">
+                    <form
+                        onSubmit={handleSubmit(handleRegistration)}
+                        className="space-y-6"
+                    >
                         <div className="group">
                             <label className="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2 ml-1">
                                 Full Name
                             </label>
                             <div className="relative">
-                                <HiOutlineUser className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-blue-500 transition-colors z-10" size={20} />
+                                <HiOutlineUser
+                                    className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-blue-500 transition-colors z-10"
+                                    size={20}
+                                />
                                 <input
                                     type="text"
-                                    className={`w-full pl-12 pr-4 py-4 bg-zinc-200 dark:bg-zinc-800/50 rounded-2xl border-2 transition-all outline-none ${errors.name ? 'border-red-500' : 'border-transparent focus:border-blue-500 dark:focus:border-blue-500/50 focus:bg-white dark:focus:bg-zinc-800'} text-zinc-900 dark:text-white`}
+                                    className={`w-full pl-12 pr-4 py-4 bg-zinc-200 dark:bg-zinc-800/50 rounded-2xl border-2 transition-all outline-none ${errors.name ? "border-red-500" : "border-transparent focus:border-blue-500 dark:focus:border-blue-500/50 focus:bg-white dark:focus:bg-zinc-800"} text-zinc-900 dark:text-white`}
                                     placeholder="Enter your name"
-                                    {...register("name", { required: "Name is required to create account" })}
+                                    {...register("name", {
+                                        required:
+                                            "Name is required to create account",
+                                    })}
                                 />
                             </div>
-                            {errors.name && <p className="text-xs text-red-500 mt-1 ml-1">{errors.name.message}</p>}
+                            {errors.name && (
+                                <p className="text-xs text-red-500 mt-1 ml-1">
+                                    {errors.name.message}
+                                </p>
+                            )}
                         </div>
 
                         <div className="group">
@@ -76,15 +103,25 @@ const Registration = () => {
                                 Profile Picture URL
                             </label>
                             <div className="relative">
-                                <HiOutlinePhotograph className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-blue-500 transition-colors z-10" size={20} />
+                                <HiOutlinePhotograph
+                                    className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-blue-500 transition-colors z-10"
+                                    size={20}
+                                />
                                 <input
                                     type="text"
-                                    className={`w-full pl-12 pr-4 py-4 bg-zinc-200 dark:bg-zinc-800/50 rounded-2xl border-2 transition-all outline-none ${errors.photoURL ? 'border-red-500' : 'border-transparent focus:border-blue-500 dark:focus:border-blue-500/50 focus:bg-white dark:focus:bg-zinc-800'} text-zinc-900 dark:text-white`}
+                                    className={`w-full pl-12 pr-4 py-4 bg-zinc-200 dark:bg-zinc-800/50 rounded-2xl border-2 transition-all outline-none ${errors.photoURL ? "border-red-500" : "border-transparent focus:border-blue-500 dark:focus:border-blue-500/50 focus:bg-white dark:focus:bg-zinc-800"} text-zinc-900 dark:text-white`}
                                     placeholder="https://your-photo-link.com"
-                                    {...register("photoURL",{required : "Image is required for your profile"})}
+                                    {...register("photoURL", {
+                                        required:
+                                            "Image is required for your profile",
+                                    })}
                                 />
                             </div>
-                            {errors.photoURL && <p className="text-xs text-red-500 mt-1 ml-1">{errors.photoURL.message}</p>}
+                            {errors.photoURL && (
+                                <p className="text-xs text-red-500 mt-1 ml-1">
+                                    {errors.photoURL.message}
+                                </p>
+                            )}
                         </div>
 
                         <div className="group">
@@ -92,15 +129,24 @@ const Registration = () => {
                                 Email Address
                             </label>
                             <div className="relative">
-                                <HiOutlineMail className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-blue-500 transition-colors z-10" size={20} />
+                                <HiOutlineMail
+                                    className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-blue-500 transition-colors z-10"
+                                    size={20}
+                                />
                                 <input
                                     type="email"
-                                    className={`w-full pl-12 pr-4 py-4 bg-zinc-200 dark:bg-zinc-800/50 rounded-2xl border-2 transition-all outline-none ${errors.email ? 'border-red-500' : 'border-transparent focus:border-blue-500 dark:focus:border-blue-500/50 focus:bg-white dark:focus:bg-zinc-800'} text-zinc-900 dark:text-white`}
+                                    className={`w-full pl-12 pr-4 py-4 bg-zinc-200 dark:bg-zinc-800/50 rounded-2xl border-2 transition-all outline-none ${errors.email ? "border-red-500" : "border-transparent focus:border-blue-500 dark:focus:border-blue-500/50 focus:bg-white dark:focus:bg-zinc-800"} text-zinc-900 dark:text-white`}
                                     placeholder="example@mail.com"
-                                    {...register("email", { required: "Email is must be required" })}
+                                    {...register("email", {
+                                        required: "Email is must be required",
+                                    })}
                                 />
                             </div>
-                            {errors.email && <p className="text-xs text-red-500 mt-1 ml-1">{errors.email.message}</p>}
+                            {errors.email && (
+                                <p className="text-xs text-red-500 mt-1 ml-1">
+                                    {errors.email.message}
+                                </p>
+                            )}
                         </div>
 
                         <div className="group">
@@ -108,22 +154,40 @@ const Registration = () => {
                                 Password
                             </label>
                             <div className="relative">
-                                <HiOutlineLockClosed className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-blue-500 transition-colors z-10" size={20} />
-                                <input
-                                    type={isPasswordVisible ? "text" : "password"}
-                                    className={`w-full pl-12 pr-12 py-4 bg-zinc-200 dark:bg-zinc-800/50 rounded-2xl border-2 transition-all outline-none ${errors.password ? 'border-red-500' : 'border-transparent focus:border-blue-500 dark:focus:border-blue-500/50 focus:bg-white dark:focus:bg-zinc-800'} text-zinc-900 dark:text-white`}
-                                    placeholder="••••••••"
-                                    {...register("password", { required: "Password is must be required" })}
+                                <HiOutlineLockClosed
+                                    className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-blue-500 transition-colors z-10"
+                                    size={20}
                                 />
-                                <button 
+                                <input
+                                    type={
+                                        isPasswordVisible ? "text" : "password"
+                                    }
+                                    className={`w-full pl-12 pr-12 py-4 bg-zinc-200 dark:bg-zinc-800/50 rounded-2xl border-2 transition-all outline-none ${errors.password ? "border-red-500" : "border-transparent focus:border-blue-500 dark:focus:border-blue-500/50 focus:bg-white dark:focus:bg-zinc-800"} text-zinc-900 dark:text-white`}
+                                    placeholder="••••••••"
+                                    {...register("password", {
+                                        required:
+                                            "Password is must be required",
+                                    })}
+                                />
+                                <button
                                     type="button"
-                                    onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+                                    onClick={() =>
+                                        setIsPasswordVisible(!isPasswordVisible)
+                                    }
                                     className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors z-10"
                                 >
-                                    {isPasswordVisible ? <HiEyeOff size={22} /> : <HiEye size={22} />}
+                                    {isPasswordVisible ? (
+                                        <HiEyeOff size={22} />
+                                    ) : (
+                                        <HiEye size={22} />
+                                    )}
                                 </button>
                             </div>
-                            {errors.password && <p className="text-xs text-red-500 mt-1 ml-1">{errors.password.message}</p>}
+                            {errors.password && (
+                                <p className="text-xs text-red-500 mt-1 ml-1">
+                                    {errors.password.message}
+                                </p>
+                            )}
                         </div>
 
                         <Button
@@ -132,7 +196,8 @@ const Registration = () => {
                             className="w-full h-14 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-bold rounded-2xl mt-4 transition-all shadow-lg shadow-blue-500/25 active:scale-95 group"
                         >
                             <span className="flex items-center gap-2">
-                                Registration Account <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                                Registration Account{" "}
+                                <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
                             </span>
                         </Button>
                     </form>
@@ -140,7 +205,10 @@ const Registration = () => {
                     <div className="mt-10">
                         <p className="text-zinc-500 dark:text-zinc-400 font-medium">
                             Already have an account?{" "}
-                            <Link className="text-blue-600 dark:text-blue-400 font-bold hover:underline underline-offset-4" href={"/login"}>
+                            <Link
+                                className="text-blue-600 dark:text-blue-400 font-bold hover:underline underline-offset-4"
+                                href={"/login"}
+                            >
                                 Login
                             </Link>
                         </p>
