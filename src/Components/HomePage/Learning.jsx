@@ -7,12 +7,12 @@ import Learning3 from "../../../public/learning3.jpg";
 const Learning = () => {
     return (
         <div className="px-1 md:px-0 max-w-6xl mx-auto mt-5 md:mt-8 lg:mt-10">
-            <div className="mb-8 space-y-2 flex items-center justify-center flex-col text-center max-w-2xl mx-auto">
-                <h2 className="text-3xl font-bold tracking-tight light:text-white dark:text-white">
-                    Master Your Schedule with{" "}
-                    <span className="text-[#c421ff]">SkillSphere</span>
+
+            <div className="mb-6 text-center">
+                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight dark:text-white">
+                     Master Your Schedule with <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#c421ff] to-[#4d7fff]">SkillSphere</span>
                 </h2>
-                <p className="text-zinc-400 dark:text-zinc-300 text-[14px] md:text-[16px]">
+                <p className="mt-2 text-gray-500 text-[14px] max-w-2xl mx-auto">
                     Efficiency is the bridge between goals and accomplishment.
                     Use these proven strategies to optimize your learning
                     journey.

@@ -2,6 +2,7 @@ import Hero from "@/Components/HomePage/Hero";
 import HowToLearn from "@/Components/HomePage/HowToLearn";
 import Learning from "@/Components/HomePage/Learning";
 import TopCourses from "@/Components/HomePage/TopCourses";
+import TopInstructor from "@/Components/HomePage/TopInstructor";
 
 export default function Home() {
     return (
@@ -10,6 +11,7 @@ export default function Home() {
             <TopCourses/>
             <Learning/>
             <HowToLearn/>
+            <TopInstructor/>
         </div>
     );
 }

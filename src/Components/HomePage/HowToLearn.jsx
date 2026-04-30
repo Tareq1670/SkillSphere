@@ -3,9 +3,9 @@ import React from "react";
 const HowToLearn = () => {
     return (
         <div className="my-8 md:my-12 lg:my-15 px-1 md:px-0 mt-8 md:mt-12">
-            <div className="mb-4">
-                <h2 className="text-3xl font-bold tracking-tight light:text-white dark:text-white text-center under">
-                    How to <span className="text-[#c421ff]">Learn</span>
+            <div className="mb-6 text-center">
+                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight dark:text-white">
+                     How to <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#c421ff] to-[#4d7fff]">Learn</span>
                 </h2>
             </div>
 
