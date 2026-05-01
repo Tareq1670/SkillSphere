@@ -1,10 +1,11 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
-import { Button, Input } from "@heroui/react";
+import { Button, Separator } from "@heroui/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FcGoogle } from "react-icons/fc";
 import {
     HiOutlineMail,
     HiOutlineUser,
@@ -12,9 +13,13 @@ import {
     HiOutlineLockClosed,
     HiEye,
     HiEyeOff,
-    HiArrowRight,
 } from "react-icons/hi";
+import { IoLogoGithub } from "react-icons/io";
 import { toast } from "react-toastify";
+
+
+
+
 
 const Registration = () => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -52,6 +57,34 @@ const Registration = () => {
             setTimeout(() => {
                 router.push("/login");
             }, 2000);
+        }
+    };
+
+    const googleLogin = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+        if (data.error) {
+            toast.error(data.error.message || "Something went wrong!", {
+                icon: () => "🚫",
+                hideProgressBar: true,
+                className:
+                    "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 border-b-2 border-b-red-500",
+            });
+        }
+    };
+
+    const gitLogin = async () => {
+        const data = await authClient.signIn.social({
+            provider: "github",
+        });
+        if (data.error) {
+            toast.error(data.error.message || "Something went wrong!", {
+                icon: () => "🚫",
+                hideProgressBar: true,
+                className:
+                    "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 border-b-2 border-b-red-500",
+            });
         }
     };
 
@@ -170,7 +203,8 @@ const Registration = () => {
                                             "Password is must be required",
                                     })}
                                 />
-                                <button
+                                <Button
+                                    variant="ghost"
                                     type="button"
                                     onClick={() =>
                                         setIsPasswordVisible(!isPasswordVisible)
@@ -182,7 +216,7 @@ const Registration = () => {
                                     ) : (
                                         <HiEye size={22} />
                                     )}
-                                </button>
+                                </Button>
                             </div>
                             {errors.password && (
                                 <p className="text-xs text-red-500 mt-1 ml-1">
@@ -194,16 +228,13 @@ const Registration = () => {
                         <Button
                             isLoading={isSubmitting}
                             type="submit"
-                            className="w-full h-14 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-bold rounded-2xl mt-4 transition-all shadow-lg shadow-blue-500/25 active:scale-95 group"
+                            className="w-full h-14 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-bold rounded-2xl mt-4 transition-all shadow-lg shadow-blue-500/25 active:scale-98 group"
                         >
-                            <span className="flex items-center gap-2">
-                                Registration Account{" "}
-                                <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
-                            </span>
+                            Registration
                         </Button>
                     </form>
 
-                    <div className="mt-10">
+                    <div className="mt-10 text-center">
                         <p className="text-zinc-500 dark:text-zinc-400 font-medium">
                             Already have an account?{" "}
                             <Link
@@ -213,6 +244,33 @@ const Registration = () => {
                                 Login
                             </Link>
                         </p>
+                    </div>
+                    <div>
+                        <div className="flex items-center w-full justify-around text-zinc-500 dark:text-zinc-400 font-medium my-5">
+                            <Separator className="w-3/8" />
+                            <div>or login with</div>
+                            <Separator className="w-3/8" />
+                        </div>
+                        <div className="flex w-full gap-2">
+                            <Button
+                                onClick={googleLogin}
+                                variant="outline"
+                                className={
+                                    "w-full rounded-lg py-2 md:py-4 h-auto text-[14px] md:text-lg"
+                                }
+                            >
+                                <FcGoogle /> Google
+                            </Button>
+                            <Button
+                                onClick={gitLogin}
+                                variant="outline"
+                                className={
+                                    "w-full rounded-lg py-2 md:py-4 h-auto text-[14px] md:text-lg"
+                                }
+                            >
+                                <IoLogoGithub /> Github
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>

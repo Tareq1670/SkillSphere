@@ -1,5 +1,5 @@
-import { authClient, useSession } from "@/lib/auth-client";
-import { ArrowLeftToLine, ArrowRightToSquare } from "@gravity-ui/icons";
+import { authClient } from "@/lib/auth-client";
+import { ArrowRightToSquare } from "@gravity-ui/icons";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
@@ -30,7 +30,10 @@ const NavLogin = () => {
                         className="rounded-full"
                     />
                     <Button
-                        onClick={() => authClient.signOut()}
+                        onClick={() => (
+                            authClient.signOut(),
+                            router.push("/")
+                        )}
                         className={
                             "bg-gradient-to-r from-[#c240e2] to-[#7514ea]  active:scale-99"
                         }
