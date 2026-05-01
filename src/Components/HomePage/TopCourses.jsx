@@ -21,12 +21,12 @@ const TopCourses = async () => {
                 <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight dark:text-white">
                     Top <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#c421ff] to-[#4d7fff]">Rated Courses</span>
                 </h2>
-                <p className="mt-2 text-gray-500 max-w-2xl mx-auto">
+                <p className="mt-1 text-gray-500 max-w-2xl mx-auto">
                     Explore our most popular learning paths.
                 </p>
             </div>
 
-            <div className="w-full md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="w-full md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
                 {topCourse.map((course) => (
                     <TopCourseCard key={course.id} course={course} />
                 ))}

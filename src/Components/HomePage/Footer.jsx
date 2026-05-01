@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
     return (
-        <footer className="mt-20">
+        <footer className="mt-10 md:mt20">
             <div className="bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl border border-white/20 dark:border-zinc-800/50 shadow-[0_8px_32px_rgba(0,0,0,0.1)] rounded-2xl p-6 md:p-10">
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

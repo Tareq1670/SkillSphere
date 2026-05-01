@@ -15,3 +15,9 @@ export const getInstructor = async() => {
     const data = res.json();
     return data
 }
+
+export const getNewCourses = async () => {
+    const res = await fetch("https://skillsphere-api-htpu.onrender.com/new-courses");
+    const data = res.json();
+    return data
+}

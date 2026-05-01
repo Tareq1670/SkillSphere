@@ -36,7 +36,7 @@ const Navbar = () => {
                     className={`text-sm font-medium text-zinc-600 dark:text-zinc-300 dark:hover:text-[#c240e2] py-2 px-4 rounded-full ${getActiveLink("/courses")}`}
                     href={"/courses"}
                 >
-                    Courses
+                    All Courses
                 </Link>
             </li>
 

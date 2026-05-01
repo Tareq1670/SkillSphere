@@ -6,10 +6,10 @@ import Learning3 from "../../../public/learning3.jpg";
 
 const Learning = () => {
     return (
-        <div className="px-1 md:px-0 max-w-6xl mx-auto mt-5 md:mt-8 lg:mt-10">
+        <div className="px-1 md:px-0 max-w-6xl mx-auto mt-4 md:mt-8 lg:mt-10">
 
             <div className="mb-6 text-center">
-                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight dark:text-white">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight dark:text-white">
                      Master Your Schedule with <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#c421ff] to-[#4d7fff]">SkillSphere</span>
                 </h2>
                 <p className="mt-2 text-gray-500 text-[14px] max-w-2xl mx-auto">
@@ -19,7 +19,7 @@ const Learning = () => {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
                 <div className="flex flex-col items-center justify-center text-center space-y-3 border p-10 dark:text-white light:text-black rounded-lg dark:border-zinc-700 light:border-zinc-800 backdrop-blur-2xl bg-[#ece9e2] dark:bg-zinc-800 transition-all duration-500 h-[380px] md:h-auto px-2 xl:px10">
                     <div className="bg-black dark:bg-white h-[50px] w-[50px] rounded-full flex items-center justify-center mb-10  transition-all duration-500">
                         <FileSpreadsheet className="text-cyan-400" />

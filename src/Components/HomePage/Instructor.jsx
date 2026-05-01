@@ -53,7 +53,7 @@ const Instructor = ({ instructor }) => {
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 w-full mb-6">
-                    <div className="bg-gray-100/50 dark:bg-white/5 rounded-2xl p-3 flex flex-col items-center border border-gray-100 dark:border-white/5 group-hover:border-[#c421ff]/20 transition-colors">
+                    <div className="bg-gray-100/50 dark:bg-white/5 rounded-lg p-3 flex flex-col items-center border border-gray-100 dark:border-white/5 group-hover:border-[#c421ff]/20 transition-colors">
                         <Persons
                             className="text-gray-500 dark:text-gray-400 mb-1"
                             width={16}
@@ -67,7 +67,7 @@ const Instructor = ({ instructor }) => {
                         </span>
                     </div>
 
-                    <div className="bg-gray-100/50 dark:bg-white/5 rounded-2xl p-3 flex flex-col items-center border border-gray-100 dark:border-white/5 group-hover:border-[#c421ff]/20 transition-colors">
+                    <div className="bg-gray-100/50 dark:bg-white/5 rounded-lg p-3 flex flex-col items-center border border-gray-100 dark:border-white/5 group-hover:border-[#c421ff]/20 transition-colors">
                         <Display
                             className="text-gray-500 dark:text-gray-400 mb-1"
                             width={16}
@@ -88,7 +88,7 @@ const Instructor = ({ instructor }) => {
                             href={socials.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-3 rounded-xl bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 border transition-all duration-300"
+                            className="p-3 rounded-lg bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 border transition-all duration-300"
                         >
                             <LogoGithub width={20} height={20} />
                         </Link>
@@ -98,7 +98,7 @@ const Instructor = ({ instructor }) => {
                         <Link
                             href={socials.linkedin}
                             target="_blank"
-                            className="p-3 rounded-xl bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 border transition-all duration-300"
+                            className="p-3 rounded-lg bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 border transition-all duration-300"
                         >
                             <LogoLinkedin width={20} height={20} />
                         </Link>
