@@ -3,6 +3,7 @@ import { ArrowRightToSquare } from "@gravity-ui/icons";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const NavLogin = () => {
     const session = authClient.useSession();
@@ -10,13 +11,35 @@ const NavLogin = () => {
     const pathName = usePathname();
 
     const handleLogin = () => {
-        router.push(`/login?callbackUrl=${pathName}`);
+        router.push(
+            `/login?callbackUrl=${pathName === "/login" ? "/" : pathName}`,
+        );
     };
 
-    const handleLogOut = () => {
-        authClient.signOut();
-        router.push(pathName);
-        router.refresh()
+    const handleLogOut = async () => {
+        try {
+            await authClient.signOut({
+                fetchOptions: {
+                    onSuccess: () => {
+                        router.push(pathName);
+                        router.refresh();
+                        toast.success("Logout successfully!", {
+                            icon: () => "✅",
+                            hideProgressBar: true,
+                            className:
+                                "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border-b-2 border-b-green-500",
+                        });
+                    },
+                },
+            });
+        } catch (error) {
+            toast.error(error || "Update failed!", {
+                icons: () => "🚫",
+                hideProgressBar: true,
+                className:
+                    "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border-b-2 border-b-red-500",
+            });
+        }
     };
 
     return (
