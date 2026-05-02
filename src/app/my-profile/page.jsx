@@ -1,11 +1,14 @@
-import EditProfile from "@/Components/Profile/EditProfile";
+
 import { auth } from "@/lib/auth";
+import { Button } from "@heroui/react";
 import { headers } from "next/headers";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
     title: "My Profile | SkillSphere",
-    description: "Manage your learning journey on SkillSphere. View your enrolled courses, track your progress, and showcase your achievements in your personal profile.",
+    description:
+        "Manage your learning journey on SkillSphere. View your enrolled courses, track your progress, and showcase your achievements in your personal profile.",
 };
 
 const MyProfilePage = async () => {
@@ -18,7 +21,14 @@ const MyProfilePage = async () => {
     return (
         <div className="min-h-[82vh] flex items-center justify-center p-4">
             <div className="relative w-full max-w-md overflow-hidden rounded-lg border border-zinc-500/10 dark:border-zinc-800/50 bg-zinc-400/10 dark:bg-zinc-900/40 backdrop-blur-xl p-8 transition-all duration-500 shadow group">
-                <EditProfile/>
+                <Link href={"edit-profile"}>
+                    <Button
+                        variant="flat"
+                        className="absolute top-4 right-4 cursor-pointer bg-purple-600/10 text-purple-600 hover:bg-purple-600 hover:text-white border border-purple-600/20 text-[12px] md:text-[14px] backdrop-blur-2xl transition-all duration-500 py-1 px-2 md:px-4 rounded-full font-bold"
+                    >
+                        Edit Profile
+                    </Button>
+                </Link>
 
                 <div className="flex flex-col items-center space-y-6">
                     <div className="relative p-1 rounded-full bg-gradient-to-tr from-[#c421ff] to-blue-500 shadow-lg">

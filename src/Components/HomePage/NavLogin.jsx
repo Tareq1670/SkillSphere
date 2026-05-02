@@ -2,6 +2,7 @@ import { authClient } from "@/lib/auth-client";
 import { ArrowRightToSquare } from "@gravity-ui/icons";
 import { Button } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
@@ -51,14 +52,16 @@ const NavLogin = () => {
                 </div>
             ) : session.data?.user ? (
                 <div className="flex items-center space-x-2">
-                    <Image
-                        src={session.data?.user?.image}
-                        alt="User Image"
-                        width={500}
-                        height={500}
-                        loading="eager"
-                        className="rounded-full w-[35px] h-[35px] object-cover"
-                    />
+                    <Link href={"/my-profile"}>
+                        <Image
+                            src={session.data?.user?.image}
+                            alt="User Image"
+                            width={500}
+                            height={500}
+                            loading="eager"
+                            className="rounded-full w-[35px] h-[35px] object-cover"
+                        />
+                    </Link>
                     <Button
                         onClick={handleLogOut}
                         className={
