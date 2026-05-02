@@ -16,6 +16,7 @@ const NavLogin = () => {
     const handleLogOut = () => {
         authClient.signOut();
         router.push(pathName);
+        router.refresh()
     };
 
     return (
