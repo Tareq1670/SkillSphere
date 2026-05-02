@@ -1,19 +1,14 @@
 import dns from "node:dns";
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/HomePage/Navbar";
 import ThemeProviders from "@/Providers/ThemeProviders";
 import Footer from "@/Components/HomePage/Footer";
 import { Slide, ToastContainer } from "react-toastify";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
+const inter = Inter({
+    variable: "--font-inter-sans",
     subsets: ["latin"],
 });
 
@@ -28,7 +23,7 @@ export default function RootLayout({ children }) {
         <html
             lang="en"
             suppressHydrationWarning
-            className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+            className={`${inter.className} h-full antialiased`}
         >
             <body className="bg-background text-foreground">
                 <ThemeProviders>

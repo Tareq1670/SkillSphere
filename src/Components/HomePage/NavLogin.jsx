@@ -6,12 +6,17 @@ import { usePathname, useRouter } from "next/navigation";
 
 const NavLogin = () => {
     const session = authClient.useSession();
-    const router = useRouter()
-    const pathName = usePathname()
+    const router = useRouter();
+    const pathName = usePathname();
 
     const handleLogin = () => {
-        router.push(`/login?callbackUrl=${pathName}`)
-    }
+        router.push(`/login?callbackUrl=${pathName}`);
+    };
+
+    const handleLogOut = () => {
+        authClient.signOut();
+        router.push(pathName);
+    };
 
     return (
         <div>
@@ -25,20 +30,18 @@ const NavLogin = () => {
                     <Image
                         src={session.data?.user?.image}
                         alt="User Image"
-                        width={30}
-                        height={30}
-                        className="rounded-full"
+                        width={500}
+                        height={500}
+                        loading="eager"
+                        className="rounded-full w-[35px] h-[35px] object-cover"
                     />
                     <Button
-                        onClick={() => (
-                            authClient.signOut(),
-                            router.push("/")
-                        )}
+                        onClick={handleLogOut}
                         className={
                             "bg-gradient-to-r from-[#c240e2] to-[#7514ea]  active:scale-99"
                         }
                     >
-                         LogOut
+                        LogOut
                     </Button>
                 </div>
             ) : (

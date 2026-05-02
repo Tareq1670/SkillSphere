@@ -4,7 +4,7 @@ import { Button, Chip } from "@heroui/react";
 import Link from "next/link";
 
 const TopCourseCard = ({ course }) => {
-    const { image, title, rating, instructor } = course;
+    const { image, title, rating, instructor, id } = course;
 
     return (
         <div className="group relative overflow-hidden rounded-lg border border-black/10 bg-white/40 dark:border-white/10 dark:bg-zinc-900/50 backdrop-blur-md p-5 transition-all duration-500">
@@ -40,7 +40,12 @@ const TopCourseCard = ({ course }) => {
                 </h3>
 
                 <Button className=" mt-3 w-full h-11 rounded-lg font-semibold bg-zinc-900 text-white dark:bg-white dark:text-black hover:bg-[#b63de3] dark:hover:bg-[#b63de3] hover:text-white dark:hover:text-white transition-all duration-300 shadow-lg shadow-transparent hover:shadow-[#b73de314]">
-                    <Link href={"/courses"} className="flex items-center justify-center gap-2 h-full w-full">View Details</Link>
+                    <Link
+                        href={`/course-details/${id}`}
+                        className="flex items-center justify-center gap-2 h-full w-full"
+                    >
+                        View Details
+                    </Link>
                 </Button>
             </div>
         </div>

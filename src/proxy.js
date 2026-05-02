@@ -20,5 +20,5 @@ export const proxy = async (request) => {
 };
 
 export const config = {
-    matcher: "/my-profile",
+    matcher: ["/my-profile","/course-details/:id*"],
 };

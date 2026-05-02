@@ -24,8 +24,8 @@ const MyProfilePage = async () => {
                     <div className="relative p-1 rounded-full bg-gradient-to-tr from-[#c421ff] to-blue-500 shadow-lg">
                         <div className="relative w-30 h-30 mx-auto rounded-full overflow-hidden  border-[#c421ff]/20 p-1 group-hover:scale-105 transition-transform duration-500">
                             <Image
-                                src={user.image}
-                                alt={user.name}
+                                src={user?.image}
+                                alt={user?.name}
                                 fill
                                 sizes="96px"
                                 className="rounded-full object-cover p-1 bg-gray-200 dark:bg-gray-800"
@@ -39,7 +39,7 @@ const MyProfilePage = async () => {
                                 Full Name
                             </p>
                             <h2 className="text-2xl font-black text-zinc-800 dark:text-zinc-100 tracking-tight">
-                                {user.name}
+                                {user?.name}
                             </h2>
                         </div>
 
@@ -54,7 +54,7 @@ const MyProfilePage = async () => {
                                 Email Address
                             </p>
                             <p className="text-zinc-600 dark:text-zinc-400 font-medium">
-                                {user.email}
+                                {user?.email}
                             </p>
                         </div>
                     </div>

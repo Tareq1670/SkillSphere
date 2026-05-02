@@ -31,7 +31,7 @@ const Instructor = ({ instructor }) => {
                             src={image}
                             alt={name}
                             fill
-                            sizes="96px"
+                            sizes="(max-width: 768px) 100vw, 96px"
                             className="rounded-full object-cover p-1 bg-gray-200 dark:bg-gray-800"
                         />
                     </div>

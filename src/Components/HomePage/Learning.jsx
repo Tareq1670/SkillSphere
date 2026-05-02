@@ -1,8 +1,8 @@
 import { BookCheck, FileSpreadsheet, LaptopMinimalCheck } from "lucide-react";
 import Image from "next/image";
-import Learning1 from "../../../public/learning.jpg";
-import Learning2 from "../../../public/learning2.jpg";
-import Learning3 from "../../../public/learning3.jpg";
+import Learning1 from "@/assets/images/learning.jpg";
+import Learning2 from "@/assets/images/learning2.jpg";
+import Learning3 from "@/assets/images/learning3.jpg";
 
 const Learning = () => {
     return (
