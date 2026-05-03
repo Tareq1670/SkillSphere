@@ -22,7 +22,7 @@ const Instructor = ({ instructor }) => {
     } = instructor;
 
     return (
-        <div className="group bg-gray-50/50 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-lg p-6 transition-all duration-500 hover:bg-white dark:hover:bg-white/10 hover:border-[#c421ff]/20 hover:shadow-lg dark:hover:shadow-none">
+        <div className="group bg-gray-50/50 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-lg p-6 transition-all duration-500 hover:bg-white dark:hover:bg-white/10 hover:border-[#c421ff]/20 dark:hover:border-[#c421ff]/20 hover:shadow-lg dark:hover:shadow-none">
 
             <div className="flex flex-col items-center text-center">
                 <div className="relative mb-5">
@@ -53,7 +53,7 @@ const Instructor = ({ instructor }) => {
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 w-full mb-6">
-                    <div className="bg-gray-100/50 dark:bg-white/5 rounded-lg p-3 flex flex-col items-center border border-zinc-600/10 dark:border-white/5 group-hover:border-[#c421ff]/20 transition-colors">
+                    <div className="bg-gray-100/50 dark:bg-white/5 rounded-lg p-3 flex flex-col items-center border border-zinc-600/10 dark:border-white/5 group-hover:border-[#c421ff]/20 dark:group-hover:border-[#c421ff]/20 transition-colors">
                         <Persons
                             className="text-gray-500 dark:text-gray-400 mb-1"
                             width={16}
@@ -67,7 +67,7 @@ const Instructor = ({ instructor }) => {
                         </span>
                     </div>
 
-                    <div className="bg-gray-100/50 dark:bg-white/5 rounded-lg p-3 flex flex-col items-center border border-zinc-600/10 dark:border-white/5 group-hover:border-[#c421ff]/20 transition-colors">
+                    <div className="bg-gray-100/50 dark:bg-white/5 rounded-lg p-3 flex flex-col items-center border border-zinc-600/10 dark:border-white/5 group-hover:border-[#c421ff]/20 dark:group-hover:border-[#c421ff]/20 transition-colors">
                         <Display
                             className="text-gray-500 dark:text-gray-400 mb-1"
                             width={16}

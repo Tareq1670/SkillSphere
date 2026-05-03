@@ -12,6 +12,23 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
+
+
+export const generateMetadata = async({params}) =>{
+    const { id } = await params;
+    const course = await getCoursesDetails(id);
+
+    if (!course || course.error) {
+        return <Course_not_found />;
+    }
+    return{
+        title: `SkillSphere | ${course.title}`,
+        description: ""
+    }
+}
+
+
+
 const CourseDetails = async ({ params }) => {
     const { id } = await params;
     const course = await getCoursesDetails(id);

@@ -22,14 +22,15 @@ const NavLogin = () => {
             await authClient.signOut({
                 fetchOptions: {
                     onSuccess: () => {
-                        router.push(pathName);
-                        router.refresh();
+                        
                         toast.success("Logout successfully!", {
                             icon: () => "✅",
                             hideProgressBar: true,
                             className:
                                 "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border-b-2 border-b-green-500",
                         });
+                        router.push(pathName);
+                        router.refresh();
                     },
                 },
             });

@@ -13,50 +13,35 @@ const HowToLearn = () => {
                 <div className="col-span-3 space-y-4">
                     <div className="space-y-1 border-b border-b-zinc-800/20 dark:border-b-zinc-500 pb-2 transition-all duration-500">
                         <h2 className="text-xl dark:text-zinc-200 text-zinc-700 font-semibold transition-all duration-300">
-                            Guided Learning Path
+                            Active Recall Method
                         </h2>
                         <p className="text-[14px] md:text-[16px] text-zinc-500 transition-all duration-500  leading-5">
-                            Follow an expert-designed, step-by-step curriculum
-                            that simplifies complex topics, taking you from
-                            beginner to job-ready professional.
+                            Don't just re-read. Test your knowledge by recalling information from memory. This strengthens long-term retention and identifies your weak spots instantly.
                         </p>
                     </div>
                     <div className="space-y-1 border-b border-b-zinc-800/20 dark:border-b-zinc-500 pb-2 transition-all duration-500">
                         <h2 className="text-xl dark:text-zinc-200 text-zinc-700 font-semibold transition-all duration-300">
-                            Interactive Practical Projects
+                            The Feynman Technique
                         </h2>
                         <p className="text-[14px] md:text-[16px] text-zinc-500 transition-all duration-500  leading-5">
-                            Master skills by building real-world applications.
-                            Solve industry challenges to create a powerful,
-                            standout portfolio.
+                            Learn by teaching. If you can explain a complex concept in simple terms to a beginner, you have truly mastered the subject.
                         </p>
                     </div>
                     <div className="space-y-1 border-b border-b-zinc-800/20 dark:border-b-zinc-500 pb-2 transition-all duration-500">
                         <h2 className="text-xl dark:text-zinc-200 text-zinc-700 font-semibold transition-all duration-300">
-                            Expert Mentorship & Support
+                            Spaced Repetition System
                         </h2>
                         <p className="text-[14px] md:text-[16px] text-zinc-500 transition-all duration-500  leading-5">
-                            Stay on track with expert guidance and community
-                            support, ensuring a smooth, efficient, and
-                            constantly evolving learning experience.
+                            Review information at increasing intervals. This technique combats the forgetting curve and ensures you remember what you learn for months, not days.
                         </p>
                     </div>
                 </div>
                 <div className="col-span-2 md:border-l border-l-zinc-800/20 dark:border-l-zinc-500 md:pl-4 space-y-2">
                     <h2 className="text-2xl dark:text-zinc-200 text-zinc-700 font-semibold transition-all duration-300 lg:mb-4">
-                        Empower Your Growth
+                        Master Your Learning
                     </h2>
                     <p className="text-[14px] md:text-[16px] text-zinc-500 transition-all duration-500 leading-5 lg:leading-7">
-                        At SkillSphere, we bridge the gap between theory and
-                        practice. Our platform offers a flexible, self-paced
-                        environment designed for mastering in-demand
-                        technologies through an ecosystem built for growth.
-                        Beyond tutorials, we integrate hands-on labs and
-                        real-world case studies into every course, ensuring you
-                        solve actual problems rather than just memorizing
-                        syntax. Whether switching careers or leveling up,
-                        SkillSphere provides the tools and expert insights to
-                        help you reach your goals with confidence.
+                        At SkillSphere, we believe that how you learn is just as important as what you learn. Our platform is designed to integrate scientific study methods into your daily routine. By combining active participation with structured review, we help you bridge the gap between understanding a concept and mastering it. Whether you are tackling complex code or social work theories, these techniques ensure that your learning journey is efficient, deep, and lasting.
                     </p>
                 </div>
             </div>

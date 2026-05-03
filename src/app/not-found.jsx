@@ -4,6 +4,14 @@ import { Button } from "@heroui/react";
 import { Home } from "lucide-react"; 
 import NotFoundImage from "@/assets/images/page_not_found.png";
 
+
+export const metadata = {
+    title: "Page not found | SkillSphere",
+    description:
+        "404 Your page ins not founded"
+}
+
+
 const NotFoundPage = () => {
     return (
         <div className="min-h-[85vh] flex flex-col items-center justify-center px-6  transition-colors duration-300">

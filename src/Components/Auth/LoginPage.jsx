@@ -1,6 +1,8 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import { Button, Separator } from "@heroui/react";
+import Image from "next/image";
+import LoginImage from "@/assets/images/login.png"
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
@@ -18,6 +20,7 @@ import { toast } from "react-toastify";
 
 const LoginPage = () => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+    const [isLoading, setLoading] = useState(false);
     const router = useRouter();
     const searchParams = useSearchParams();
     const callbackUrl = searchParams.get("callbackUrl");
@@ -30,31 +33,34 @@ const LoginPage = () => {
     } = useForm();
 
     const handleLogin = async (data) => {
+        setLoading(true);
         const { data: res, error } = await authClient.signIn.email({
             email: data.email,
             password: data.password,
             callbackURL: redirectTo,
+            fetchOptions: {
+                onSuccess() {
+                    setLoading(false);
+                    toast.success("Login successful!", {
+                        icon: () => "✅",
+                        hideProgressBar: true,
+                        className:
+                            "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 border-b-2 border-b-green-500",
+                    });
+                    router.push(redirectTo);
+                    router.refresh();
+                },
+                onError() {
+                    setLoading(false);
+                    toast.error(error.message || "Something went wrong!", {
+                        icon: () => "🚫",
+                        hideProgressBar: true,
+                        className:
+                            "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 border-b-2 border-b-red-500",
+                    });
+                },
+            },
         });
-
-        if (error) {
-            toast.error(error.message || "Something went wrong!", {
-                icon: () => "🚫",
-                hideProgressBar: true,
-                className:
-                    "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 border-b-2 border-b-red-500",
-            });
-        } else {
-            
-            toast.success("Login successful!", {
-                icon: () => "✅",
-                hideProgressBar: true,
-                className:
-                    "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 border-b-2 border-b-green-500",
-            });
-            router.push(redirectTo);
-            router.refresh();
-        }
-        
     };
 
     const googleLogin = async () => {
@@ -69,9 +75,6 @@ const LoginPage = () => {
                 className:
                     "!bg-white dark:!bg-zinc-900 !text-black dark:!text-white shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 border-b-2 border-b-red-500",
             });
-        } else {
-            router.push(redirectTo);
-            router.refresh();
         }
     };
 
@@ -92,6 +95,25 @@ const LoginPage = () => {
             router.refresh();
         }
     };
+
+    if (isLoading) {
+        return (
+            <div className="h-[80vh] flex items-center justify-center bg-transparent">
+                <div className="backdrop-blur-md h-[500px] flex flex-col items-center justify-center w-full max-w-[500px] rounded-lg border border-zinc-200/50 dark:border-zinc-800/50 bg-white/10 dark:bg-zinc-900/20 shadow-xl overflow-hidden transition-all duration-500">
+                    <div className="relative mb-6 animate-pulse">
+                        <Image
+                            src={LoginImage}
+                            alt="Login Image"
+                            className="w-64 h-64 object-contain"
+                        />
+                    </div>
+                    <h2 className="text-2xl font-semibold tracking-widest bg-gradient-to-r from-zinc-900 to-zinc-500 dark:from-white dark:to-zinc-400 bg-clip-text text-transparent">
+                        Login...
+                    </h2>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="min-h-100vh flex items-center justify-center px-1 md:px-0 py-10 transition-colors duration-500">

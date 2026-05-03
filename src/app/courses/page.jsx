@@ -3,6 +3,14 @@ import SearchCourseNotFound from "@/Components/Not_Found_Page/SearchCourseNotFou
 import SearchBar from "@/Components/Search/SearchBar";
 import { getCourses } from "@/Data/api";
 
+
+export const metadata = {
+    title: "All Courses | SkillSphere",
+    description:
+        "This page provide all category courses.",
+}
+
+
 const CoursePage = async({searchParams}) => {
     const {search} = await searchParams;
 

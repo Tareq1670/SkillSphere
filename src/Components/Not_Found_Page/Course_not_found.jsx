@@ -2,6 +2,7 @@ import Image from "next/image";
 import NotFoundImage from "@/assets/images/Course_not_found.png";
 import Link from "next/link";
 
+
 const CourseNotFound = () => {
     return (
         <div className="flex flex-col items-center justify-center p-10 text-center">

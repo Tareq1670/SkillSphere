@@ -7,6 +7,7 @@ import { HiOutlineUser, HiOutlinePhotograph } from "react-icons/hi";
 import { toast } from "react-toastify";
 import Link from "next/link";
 
+
 const EditProfilePage = () => {
     const router = useRouter();
     const {
@@ -123,7 +124,7 @@ const EditProfilePage = () => {
                             <Link className="w-full" href={"/my-profile"}>
                                 <Button
                                     variant="flat"
-                                    className="w-full h-14 bg-zinc-600 hover:bg-zinc-700 dark:bg-zinc-500 dark:hover:bg-zinc-600 text-white font-bold rounded-lg mt-4 transition-all shadow-lg shadow-purple-500/25 active:scale-98 group"
+                                    className="w-full h-14 bg-zinc-600 hover:bg-zinc-700 dark:bg-zinc-500 dark:hover:bg-zinc-600 text-white font-bold rounded-lg mt-4 transition-all active:scale-98 group"
                                 >
                                     Cancel
                                 </Button>
@@ -131,7 +132,7 @@ const EditProfilePage = () => {
                             <Button
                                 isLoading={isSubmitting}
                                 type="submit"
-                                className="w-full h-14 bg-purple-600 hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600 text-white font-bold rounded-lg mt-4 transition-all shadow-lg shadow-purple-500/25 active:scale-98 group"
+                                className="w-full h-14 bg-purple-600 hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600 text-white font-bold rounded-lg mt-4 transition-all active:scale-98 group"
                             >
                                 {isSubmitting ? "Updating..." : "Save Changes"}
                             </Button>
