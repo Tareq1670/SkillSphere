@@ -44,7 +44,7 @@ const TopCourseCard = ({ course }) => {
                         href={`/course-details/${id}`}
                         className="flex items-center justify-center gap-2 h-full w-full"
                     >
-                        Details
+                        View Details
                     </Link>
                 </Button>
             </div>
