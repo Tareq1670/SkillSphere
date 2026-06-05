@@ -4,49 +4,65 @@ SkillSphere is a modern, high-performance online learning platform designed to p
 
 ---
 
-### 🌐 Live Deployment
-Check out the live application here:  
-**[Live Link](https://skill-sphere-ten-lac.vercel.app/)**
+## 🌐 Live Website
+
+**Live Link:** https://skill-sphere-ten-lac.vercel.app/
+
 
 ---
 
 ## 🎯 Project Purpose
+
 The goal of SkillSphere is to bridge the gap between learners and quality content through a visually stunning and technically optimized web application. By leveraging modern web technologies, the project focuses on speed, security, and an intuitive user interface to make digital learning accessible and engaging.
 
 ---
 
 ## ✨ Key Features
-*   **Modern Hero Section:** An engaging entry point featuring dynamic sliders.
-*   **Secure Authentication:** Comprehensive user login, registration, and logout system.
-*   **Real-time Notifications:** Instant feedback for user actions like logging in or signing up.
-*   **Responsive Design:** Fully optimized for all screen sizes using modern CSS frameworks.
-*   **Unique UI/UX:** A custom-crafted interface using advanced component libraries for a premium feel.
-*   **Database Management:** Secure data handling for users and platform content.
+
+* 🎯 Modern Hero Section featuring dynamic sliders
+* 🔐 Secure Authentication system with Login, Registration, and Logout functionality
+* 🔔 Real-time Notifications for important user actions
+* 📱 Fully Responsive Design optimized for all devices
+* 🎨 Unique and Modern UI/UX built with advanced component libraries
+* 🗄️ Secure Database Management for users and platform content
 
 ---
 
-## 🛠️ NPM Packages Used
+## 🛠️ Technologies & NPM Packages Used
 
 ### Core Framework & UI
-*   **Next.js:** The React framework for production.
-*   **HeroUI:** For building beautiful and accessible user interfaces.
-*   **Tailwind CSS:** For rapid and responsive custom styling.
-*   **Swiper.js:** To power the interactive sliders in the Hero section.
-*   **Gravity UI Icons:** High-quality icons for a professional look.
-*   **React Icons:** For versatile and scalable iconography.
+
+* Next.js
+* HeroUI
+* Tailwind CSS
+* Swiper.js
+* Gravity UI Icons
+* React Icons
 
 ### Functionality & Authentication
-*   **Better-Auth:** For a secure and modern authentication flow.
-*   **React Hook Form:** For efficient and performant form handling and validation.
-*   **React Toastify:** To provide sleek, non-blocking notifications (Toast alerts).
+
+* Better-Auth
+* React Hook Form
+* React Toastify
 
 ### Database & Backend
-*   **MongoDB:** NoSQL database for flexible and scalable data storage.
-*   **Mongoose:** For elegant MongoDB object modeling.
+
+* MongoDB
+* express JS
 
 ---
 
+---
 
-###  Author By : **[TARIQUL ISLAM TAREQ](https://github.com/Tareq1670)**
+## 📸 Project Preview
+
+> Add your project screenshots or GIFs here.
+
+![SkillSphere Screenshot](./public/project-preview.png)
+
+
+## 👨‍💻 Author
+
+**TARIQUL ISLAM TAREQ**
 
 ---
