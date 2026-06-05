@@ -52,15 +52,11 @@ The goal of SkillSphere is to bridge the gap between learners and quality conten
 
 ---
 
----
-
 ## 📸 Project Preview
 
-> Add your project screenshots or GIFs here.
+<img width="1376" height="768" alt="skillsphere" src="https://github.com/user-attachments/assets/5ecd5073-24d9-46d0-9e4f-0fe59dae210c" />
 
-![SkillSphere Screenshot](./public/project-preview.png)
-
-
+---
 ## 👨‍💻 Author
 
 **TARIQUL ISLAM TAREQ**
